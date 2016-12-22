@@ -1,0 +1,29 @@
+import discord
+import asyncio
+client = discord.Client()
+
+#  D:
+#  cd D:\Program Files (x86)\Python
+
+def example_func(author, message):
+    client.send_message (message.channel, "%s, How are you doing?" % author)
+
+
+def join(author, message):
+    join_link = message.content.strip('!join ')
+    print ("This is the join link -- %s") % join_link
+    client.accept_invite(join_link)
+    client.send_message(message.channel, "The Bot has joined!")
+	
+
+def on_message(message) :
+    author = message.author
+    if message.content.startswith ('!test'):
+	    example_func(author, message)
+    if message.content.startswith ('!join'):
+	    join(author, message)
+
+
+
+client.accept_invite('https://discord.gg/u9SNfDS')
+client.run('jojomedia@arcor.de', 'Poopiishere69')
