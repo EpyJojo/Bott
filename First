@@ -25,5 +25,5 @@ def on_message(message) :
 
 
 
-client.accept_invite('https://discord.gg/u9SNfDS')
-client.run('jojomedia@arcor.de', 'Poopiishere69')
+client.accept_invite('https://discord.gg/xxx')
+client.run('jojomedia@arcor.de', 'pw')
