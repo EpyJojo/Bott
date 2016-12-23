@@ -19,9 +19,11 @@ async def join(author, message):
     #await client.send_message(message.channel, "The Bot has joined!")
 
 @client.event
-async def joinvoice(author, message):
-    await join_voice_channel(Halb-Eins-Coffeeshop)
-	
+async def voice(author, message):
+    voice_chat = message.content.strip("!voice ")
+    await client.join_voice_channel(voice_chat)
+
+    
 @client.event
 async def on_message(message) :
     author = message.author
@@ -29,8 +31,8 @@ async def on_message(message) :
 	    await example_func(author, message)
     if message.content.startswith ('!join'):
 	    await join(author, message)
-    if message.content.startswith ('!shop'):
-        await joinvoice(author, message)   
+    if message.content.startswith ('!voice'):
+        await voice(author, message)   
 
 
 client.accept_invite('https://discord.gg/xxx')
